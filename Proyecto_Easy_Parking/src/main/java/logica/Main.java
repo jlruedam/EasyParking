@@ -20,7 +20,7 @@ public class Main {
         int opcion=5;
         OUTER:
         while (opcion!=0) {
-            System.out.println("MENU:"+"\n1- Agregar vehículo"
+            System.out.println("MENU PRINCIPAL:"+"\n1- Agregar vehículo"
                     +"\n2- Listar vehículos"
                     +"\n3- Editar vehículo"
                     +"\n4- Eliminar vehículo"
