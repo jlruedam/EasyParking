@@ -4,7 +4,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>Proyecto_Easy_Parking</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>v1</version>
     <packaging>war</packaging>
 
     <name>Proyecto_Easy_Parking</name>
