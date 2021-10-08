@@ -8,12 +8,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JSP Page</title>
+        <title>JSP Page</title>         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        Boostrap core CSS
+        Bootstrap core CSS 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        Angular
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        Angular 
+        <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="angularsrc.js"></script>
         <style>
             /*div {border-style: dotted; }*/
         </style>
@@ -102,12 +105,13 @@
     </body>
     <script>
         //código Angular
+        
         angular.module('Proyecto_Easy_Parking',[])
                 .controller('vehiculosController',['$scope',function($scope){
                         $scope.user={};
                 
                         $scope.update=function(){
-                            console.log(log($scope.user);
+                            console.log($scope.user);
                         };
                         
                         $scope.reset=function(form){
@@ -129,12 +133,13 @@
         
         function controladorVehiculos($http){
             var cv=this;
-        }
+        
         //Función Listar
         cv.listarVehiculos=function(){
+            console.log("sin ingresa algunlar listar");
             var.url="peticiones.jsp";
             var params={
-                proceso:"listarvehiculos";
+                proceso:"listarVehiculos"
             };
             $http({
                 method:'POST',
@@ -157,11 +162,11 @@
                 url:'peticiones.jsp',
                 params:vehiculo                
             }).then(function(res){
-               if(res.data.ok===true){
+               if(res.data.ok === true){
                    if(res.data[vehiculo.proceso]===true){
                        alert("Guardado con éxito");
                    }else{
-                       alert("Por favor verifque sus datos");
+                       alert("Por favor verifique sus datos");
                    }
                } else{
                    alert(res.data.errorMsg);
@@ -172,7 +177,7 @@
         cv.eliminarVehiculo=function(){
             var vehiculo={
                 proceso:"eliminarVehiculo",
-                matricula:cv.matricula;
+                matricula:cv.matricula
             };
             $http({
                 method:'POST',
@@ -181,7 +186,7 @@
             }).then(function (res){
                 if(res.data.ok===true){
                     if(res.data[vehiculo.proceso]===true){
-                        alert("Eliminado con éxtio");
+                        alert("Eliminado con éxito");
                     }else{
                         alert("Por favor verifique sus datos");
                     }
@@ -206,8 +211,8 @@
                 params:vehiculo
             }).then(function (res){
                if(res.data.ok===true){
-                   if(res.data[contacto.proceso]===true){
-                       alert("Contacto actualizado con éxito");
+                   if(res.data[vehiculo.proceso]===true){
+                       alert("Vehiculo actualizado con éxito");
                    }else{
                        alert("Por favor verifique sus datos");
                    }
@@ -215,7 +220,9 @@
                    alert(res.data.errorMsg);
                }
             });
+            
         };
+    }       
         
         
     </script>

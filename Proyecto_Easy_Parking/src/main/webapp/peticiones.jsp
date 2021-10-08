@@ -22,7 +22,7 @@
     //Lista procesos
     List<String> tareas=Arrays.asList(new String[]{
         "actualizarVehiculo",
-        "eliminarEliminar",
+        "eliminarVehiculo",
         "listarVehiculos",
         "guardarVehiculo"
     });
@@ -67,9 +67,9 @@
             Vehiculo v=new Vehiculo();
             try{
                List<Vehiculo> lista=v.listarVehiculo();
-               respuesta+="\""+proceso+"\":true,\"Vehiculos\":"+new Gson().toJson(lista);
+               respuesta+="\""+proceso+"\":true,\"vehiculos\":"+new Gson().toJson(lista);
             }catch(SQLException ex){
-               respuesta+="\""+proceso+"\":true,\"Vehiculos\":[]";
+               respuesta+="\""+proceso+"\":true,\"vehiculos\":[]";
                Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
             }
          
