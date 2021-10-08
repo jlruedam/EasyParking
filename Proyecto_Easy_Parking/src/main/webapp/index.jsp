@@ -58,8 +58,7 @@
                             <div class="col-6">
                                 <label>Marca</label>
                                 <input name="marca" class="form-control" type="text" ng-model="cv.marca" ng-model-options="{updateOn: 'blur' }" required>
-                            </div>
-                            
+                            </div> 
                         </div>
                         <div><br></div>
                         <h3>SECCIÓN 2</h3>
@@ -75,37 +74,28 @@
                             </div>
                             <div class="col-3">
                                 <button class="btn btn-warning" ng-click="cv.actualizarVehiculo()">Actualizar vehículo</button>
-                            </div>
-                            
+                            </div>         
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-12 table-responsive-xl">
-                                <h3>SECCIÓN 3</h3>
-                                <table class="table table-striped table hover">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>Matícula</th>
-                                            <th>Modelo</th>
-                                            <th>Marca</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tr ng-repeat="vehiculo in cv.vehiculos">
-                                        <td>{{vehiculo.matricula}}</td>
-                                        <td>{{vehiculo.modelo}}</td>
-                                        <td>{{vehiculo.marca}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            
-                        </div>
-                        
-                        
                     </div>
                 </div>
                 <div class="row">
-                    
+                    <div class="col-12 table-responsive-xl">
+                        <h3>SECCIÓN 3</h3>
+                        <table class="table table-striped table hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Matícula</th>
+                                    <th>Modelo</th>
+                                    <th>Marca</th>
+                                </tr>
+                            </thead>
+                            <tr ng-repeat="vehiculo in cv.vehiculos">
+                                <td>{{vehiculo.matricula}}</td>
+                                <td>{{vehiculo.modelo}}</td>
+                                <td>{{vehiculo.marca}}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </form>
         </div> 
@@ -113,7 +103,7 @@
     <script>
         //código Angular
         angular.module('Proyecto_Easy_Parking',[])
-                .controller("vehiculosController",['$scope',function($scope){
+                .controller('vehiculosController',['$scope',function($scope){
                         $scope.user={};
                 
                         $scope.update=function(){
@@ -142,13 +132,13 @@
         }
         //Función Listar
         cv.listarVehiculos=function(){
-            var.url="Peticiones.jsp";
+            var.url="peticiones.jsp";
             var params={
                 proceso:"listarvehiculos";
             };
             $http({
                 method:'POST',
-                url:'Peticiones.jsp',
+                url:'peticiones.jsp',
                 params:params
             }).then(function(res){
                 cv.vehiculos=res.data.Vehiculos;
@@ -164,7 +154,7 @@
             };
             $http({
                 method:'POST',
-                url:'Peticiones.jsp',
+                url:'peticiones.jsp',
                 params:vehiculo                
             }).then(function(res){
                if(res.data.ok===true){
@@ -186,7 +176,7 @@
             };
             $http({
                 method:'POST',
-                url:'Peticiones.jsp',
+                url:'peticiones.jsp',
                 params:vehiculo
             }).then(function (res){
                 if(res.data.ok===true){
@@ -212,7 +202,7 @@
             };
             $http({
                 method:'POST',
-                url:'Peticiones.jsp',
+                url:'peticiones.jsp',
                 params:vehiculo
             }).then(function (res){
                if(res.data.ok===true){
