@@ -14,9 +14,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         Angular 
         <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <script src="angularsrc.js"></script>
+        
+        
         <style>
             /*div {border-style: dotted; }*/
         </style>
@@ -92,7 +91,7 @@
                                     <th>Marca</th>
                                 </tr>
                             </thead>
-                            <tr ng-repeat="vehiculo in cv.vehiculos">
+                            <tr ng-repeat="vehiculo in cv.Vehiculos">
                                 <td>{{vehiculo.matricula}}</td>
                                 <td>{{vehiculo.modelo}}</td>
                                 <td>{{vehiculo.marca}}</td>

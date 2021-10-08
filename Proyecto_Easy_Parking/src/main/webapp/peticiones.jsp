@@ -17,7 +17,7 @@
 
 <% 
     //Iniciando respuesta json
-    Vehiculo v1=new Vehiculo();
+    
     String respuesta="{";
     //Lista procesos
     List<String> tareas=Arrays.asList(new String[]{
