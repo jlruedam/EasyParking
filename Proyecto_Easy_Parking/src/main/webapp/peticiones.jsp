@@ -41,35 +41,36 @@
             
             Vehiculo v=new Vehiculo();
             
-            v.cargarDatosVehiculo(matricula, modelo, marca);
+            v.setMatricula(matricula);
+            v.setModelo(modelo);
+            v.setMarca(marca);
             
             if(v.guardarDatosVehiculo()){
-                respuesta+="\""+proceso+"\":true";
+                respuesta+="\"" + proceso + "\":true";
             }else{
-                respuesta+="\""+proceso+"\":false";
+                respuesta+="\"" + proceso + "\":false";
             }
         }else if (proceso.equals("eliminarVehiculo")){
             Vehiculo v=new Vehiculo();
             
             String matricula=request.getParameter("matricula");
-            String modelo=request.getParameter("modelo");
-            String marca=request.getParameter("marca");
+            
                 
-            v.cargarDatosVehiculo(matricula, modelo, marca);
+            v.setMatricula(matricula);
             
             if(v.borrarDatosVehiculo()){
-                respuesta+="\""+proceso+"\":true";
+                respuesta += "\"" + proceso+ "\":true";
             }else{
-                respuesta+="\""+proceso+"\":false";
+                respuesta += "\"" + proceso + "\":false";
             }
             
         }else if(proceso.equals("listarVehiculos")){
             Vehiculo v=new Vehiculo();
             try{
                List<Vehiculo> lista=v.listarVehiculo();
-               respuesta+="\""+proceso+"\":true,\"vehiculos\":"+new Gson().toJson(lista);
+               respuesta += "\"" + proceso + "\":true,\"Vehiculos\":" + new Gson().toJson(lista);
             }catch(SQLException ex){
-               respuesta+="\""+proceso+"\":true,\"vehiculos\":[]";
+               respuesta+="\""+proceso+"\":true,\"Vehiculos\":[]";
                Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
             }
          
@@ -78,8 +79,11 @@
             String matricula=request.getParameter("matricula");
             String modelo=request.getParameter("modelo");
             String marca=request.getParameter("marca");
+            
             Vehiculo v=new Vehiculo();
-            v.cargarDatosVehiculo(matricula, modelo, marca);
+            v.setMatricula(matricula);
+            v.setModelo(modelo);
+            v.setMarca(marca);
             
             if(v.actualizarDatosVehiculo()){
                 respuesta+="\""+proceso+"\":true";
