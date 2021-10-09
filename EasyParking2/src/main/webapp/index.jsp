@@ -23,10 +23,24 @@
         
     </head>
     <style>
-        h3 {
+        .btn-EP{
+            background-color:#001d3d;
+            color:#ffd60a;
+            width: 100%;
+        }
+        
+        h1 {
             font-family: sans-serif;
             background-color: #000814;
             color:#ffd60a;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-family: sans-serif;
+            background-color:#ffd60a ;
+            color:#000814;
             border-radius: 10px;
             text-align: center;
         }
@@ -47,53 +61,66 @@
     <body>
         <div class="container-fluid" ng-app="EasyParking2" ng-controller="vehiculosControl as vc">
             <form name="userForm" novalidate>
+                
                 <div class="row">
                     <div class="col-12">
-                        <center><h1><img <img src="./assets/LogoEP.png"/></h1></center>
+                        <center><img <img src="./assets/LogoEP.png"/></center>                
+                    </div>  
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <center><h1>EASY PARKING</h1></center>            
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-12">
                         <h3>INGRESO VEHÍCULOS</h3>
+                        <br/>
                         <div class="row">
-                            
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Matrícula</label>
                                 <input name="matricula" class="form-control" type="text"  ng-model="vc.matricula" ng-model-options="{updateOn:'blur'}" required/>
-                            </div>
-                            <div class="col-6">
+                            </div>  
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-12">
                                 <label>Modelo</label>
                                 <input name="modelo" class="form-control" type="text" ng-model="vc.modelo" ng-model-options="{updateOn:'blur'}" required/>
-                            </div>   
-                        </div>
+                            </div>
+                         </div>
+
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-12">
                                 <label>Marca</label>
                                 <input name="marca" class="form-control" type="text" ng-model="vc.marca" ng-model-options="{updateOn: 'blur' }" required/>
                             </div> 
                         </div>
+                        
                         <div><br/></div>
                         
                         <div class="row">
-                            <div class="col-3">
-                                <input class="btn btn-success" type="submit" ng-click="vc.guardarVehiculo()" value="Guardar" ng-disabled=""/>
+                            <div class="col-12">
+
+                                <center><button class="btn-EP" ng-click="vc.actualizarVehiculo()">Actualizar vehículo</button></center>
+                                <center><button class="btn-EP" ng-click="vc.eliminarVehiculo()">Eliminar vehículo</button></center>
+                                <center><input class="btn-EP" type="submit" ng-click="vc.guardarVehiculo()" value="Guardar" ng-disabled=""/></center>
                             </div>
-                            <div class="col-3">
-                                <button class="btn btn-primary" ng-click="vc.listarVehiculos()">Listar vehículos</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-danger" ng-click="vc.eliminarVehiculo()">Eliminar vehículo</button>
-                            </div>
-                            <div class="col-3">
-                                <button class="btn btn-warning" ng-click="vc.actualizarVehiculo()">Actualizar vehículo</button>
-                            </div>         
+                           
+                            
+                                    
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 table-responsive-xl">
-                        <h3>SECCIÓN 3</h3>
-                        
+                        <br/><h3>STOCK</h3><br/>
+                         <div class="col-12">
+                             <center><button class="btn-EP" ng-click="vc.listarVehiculos()">Listar vehículos</button></center>
+                             <br/>
+                         </div>
                         <table class="table table-striped table hover">
                             <thead class="thead-dark">
                                 <tr>
